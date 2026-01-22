@@ -1,0 +1,8 @@
+{
+  "name": "Copy of Selcom IoT Hub - Production Ready",
+  "version": "1.0.2",
+  "description": "Plataforma industrial para la gestión de dispositivos IoT. Optimizado para regentry.cl y dominios de producción.",
+  "author": "Selcom Chile",
+  "homepage": "https://regentry.cl",
+  "requestFramePermissions": []
+}

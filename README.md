@@ -1,11 +1,33 @@
-<div align="center">
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+# Selcom IoT Hub - Guía de Despliegue (Hostinger / Apache)
 
-  <h1>Built with AI Studio</h2>
+## 1. Preparación
+Antes de compilar, asegúrate de crear un archivo `.env` en la raíz con tu clave de Google:
+```
+API_KEY=AIzaSyTuClaveAqui...
+```
 
-  <p>The fastest path from prompt to production with Gemini.</p>
+## 2. Compilación (Build)
+Ejecuta el siguiente comando en tu terminal:
+```bash
+npm run build
+```
+Esto creará una carpeta llamada `dist/`.
 
-  <a href="https://aistudio.google.com/apps">Start building</a>
+## 3. Subida a Hostinger
+1. Ve al Administrador de Archivos de Hostinger.
+2. Abre la carpeta `public_html`.
+3. Sube **todo el contenido** de la carpeta `dist/` (no la carpeta en sí, sino los archivos que están dentro).
+   - Deberías ver `index.html`, `assets/`, `api.php`, `.htaccess`, etc.
 
-</div>
+## 4. Base de Datos
+1. Crea una base de datos MySQL en Hostinger.
+2. Importa el archivo `schema.sql` usando phpMyAdmin.
+3. Edita el archivo `api.php` y `api/iot_backend.php` en el servidor y pon usuario y contraseña de la base de datos que creaste.
+
+## Estructura generada en /dist
+- `index.html`: Entrada de la aplicación React.
+- `.htaccess`: Reglas de reescritura para que React Router funcione.
+- `api.php`: API para consultar datos.
+- `api/iot_backend.php`: API para recibir datos de los sensores.
+- `assets/`: Archivos JS y CSS compilados.
